@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.hw5android.fragments.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.hw5android.fragments.DashboardFragment"
+        android:label="DashboardFragment">
+        <action
+            android:id="@+id/action_dashboardFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <argument
+            android:name="amount"
+            android:defaultValue="-1"
+            app:argType="integer"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.hw5android.fragments.NotificationsFragment"
+        android:label="NotificationsFragment"/>
+
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.hw5android.fragments.SettingsFragment"
+        android:label="SettingsFragment">
+
+        <argument
+            android:name="fullName"
+            android:defaultValue="empty"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>
